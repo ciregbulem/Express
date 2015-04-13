@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title><%=@student.first_name %></title>
+	</head>
+	<body>
+		<h1>
+			Blahh Blahh Blahh
+		</h1>
+		<p>
+			<%= link_to "Connect to LinkedIn", omniauth_authorize_path(current_student, :linkedin) %>
+		</p>
+
+	</body>
+</html>

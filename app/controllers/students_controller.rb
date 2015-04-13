@@ -1,12 +1,17 @@
 class StudentsController < ApplicationController
-  before_action :set_student
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :show, :update]
   
   def index
-    @students=Student.all
+    @students = Student.all
   end
   
   def show
-    @student=Student.find(params[:id])
+    @student = Student.find(params[:id])
+  end
+
+  def edit
+    @student = current_student
   end
   
   def update
@@ -23,7 +28,7 @@ class StudentsController < ApplicationController
   
   private
     def set_student
-      @student=Student.find(params[:id])
+      @student = Student.find(params[:id])
     end
   
     def student_params

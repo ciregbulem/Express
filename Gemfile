@@ -1,5 +1,15 @@
 source 'https://rubygems.org'
 
+# Figaro for creating environment variables
+gem 'figaro'
+
+# OAuth gem for Social Media authentications
+gem 'omniauth'
+
+# OAuth gem for LinkedIn authentication
+gem 'omniauth-linkedin'
+
+# Devise for student and employer account creation and login
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
