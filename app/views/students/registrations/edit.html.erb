@@ -1,86 +1,129 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <br>
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>
+          <%= @student.first_name %> <%= @student.last_name %> 
+        </h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        <p>
+          <% if @student.linkedin_link %>
+            <a href="<%= @student.linkedin_link %>"><i class="fa fa-linkedin fa-2x"></i></a>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+          <% elsif @student.linkedin_link %>
+
+          <% else %>
+            <%= link_to "Connect to LinkedIn", omniauth_authorize_path(current_student, :linkedin) %>
+          <% end %>
+        </p>
+      </div>
+    </div>
   </div>
+  <div class="col-lg-6">
+    <div class="row">
+      <div class="panel panel-primary">
+      <div class="panel-heading">Edit Login</div>
+        <div class="panel-body">
+          <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+              <%= f.email_field :email %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+              <%= f.password_field :password, autocomplete: "off", help: "(leave blank if you don't want to change it)" %>
+
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+              <%= f.password_field :current_password, autocomplete: "off", help: "(we need your current password to confirm your changes)" %>
+
+              <%= f.primary "Update" %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel panel-primary">
+      <div class="panel-heading">Personal Info</div>
+        <div class="panel-body">
+          <%= bootstrap_form_for @student do |f|%>
+            <%= f.text_field :cell_number %>
+          
+            <%= f.text_field :home_number %>
+
+            <%= f.primary %>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel panel-danger">
+      <div class="panel-heading">Delete Account</div>
+        <div class="panel-body">
+          <p>Have enough resumes? Already hired? <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="col-lg-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading">Personal Info</div>
+      <div class="panel-body">
+        <%= bootstrap_form_for @student do |f|%>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.text_field :first_name %>
+
+          <%= f.text_field :last_name %>
+          
+          <%= f.text_field :skill %>
+          
+          <%= f.text_field :experience %>
+          
+          <%= f.primary %>
+
+        <%end%>
+
+      </div>
+    </div>
+    <div class="panel panel-primary">
+    <div class="panel-heading">School Info</div>
+      <div class="panel-body">
+        <%= bootstrap_form_for @student do |f|%>
+          <%= f.text_field :gpa, label: "GPA" %>
+
+          <%= f.text_field :major %>
+          
+          <%= f.text_field :minor %>
+          
+          <%= f.text_field :grad_year %>
+
+          <%= f.text_field :sport %>
+
+          <%= f.text_field :leadership %>
+
+          <%= f.primary %>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+    <div class="panel-heading">Location Info</div>
+      <div class="panel-body">
+        <%= bootstrap_form_for @student do |f|%>
+
+          <%= f.text_field :street_address %>
+          
+          <%= f.text_field :city %>
+          
+          <%= f.text_field :state %>
+          
+          <%= f.text_field :zip %>
+
+          <%= f.primary %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<%=form_for @student do |f|%>
-  
-  <%= f.label :street_address %><br />
-  <%= f.text_field :street_address, autofocus: true%>
-  
-  <%= f.label :city %><br />
-  <%= f.text_field :city, autofocus: true%>
-  
-  <%= f.label :state %><br />
-  <%= f.text_field :state, autofocus: true%>
-  
-  <%= f.label :zip %><br />
-  <%= f.text_field :zip, autofocus: true%>
-  
-  <%= f.label :cell_number %><br />
-  <%= f.text_field :cell_number, autofocus: true%>
-  
-  <%= f.label :home_number %><br />
-  <%= f.text_field :home_number, autofocus: true%>
-  
-  <%= f.label :gpa %><br /> 
-  <%= f.text_field :gpa, autofocus: true%>
-  
-  <%= f.label :skill %><br />
-  <%= f.text_field :skill, autofocus: true%>
-  
-  <%= f.label :experience %><br />
-  <%= f.text_field :experience, autofocus: true%>
-  
-  <%= f.label :major %><br />
-  <%= f.text_field :major, autofocus: true%>
-  
-  <%= f.label :minor %><br />
-  <%= f.text_field :minor, autofocus: true%>
-  
-  <%= f.label :grad_year %><br />
-  <%= f.text_field :grad_year, autofocus: true%>
-  
-  <%= f.label :leadership %><br />
-  <%= f.text_field :leadership, autofocus: true%>
-  
-  <%= f.label :sport %><br />
-  <%=f.text_field :sport, autofocus: true%>
-  
-  <%=f.submit%>
-<%end%>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

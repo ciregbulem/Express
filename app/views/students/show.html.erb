@@ -1,14 +1,31 @@
 <html>
 	<head>
 		<title><%=@student.first_name %></title>
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<h1>
-			Blahh Blahh Blahh
-		</h1>
-		<p>
-			<%= link_to "Connect to LinkedIn", omniauth_authorize_path(current_student, :linkedin) %>
-		</p>
+	<div class="container">
+		<br>
+		<div class="well well-lg" style="background-color: #FFFFFF">
+			<h1>
+				<%= @student.first_name %> <%= @student.last_name %> 
+				<% if student_signed_in? %> 
+					<small><%= link_to "Edit", edit_student_registration_path %> </small>
+				<% end %>
+			</h1>
 
+			<p>
+				<% if @student.linkedin_link %>
+					<a href="<%= @student.linkedin_link %>"><i class="fa fa-linkedin fa-2x"></i></a>
+
+				<% elsif @student.linkedin_link %>
+
+				<% else %>
+					<%= link_to "Connect to LinkedIn", omniauth_authorize_path(current_student, :linkedin) %>
+				<% end %>
+			</p>
+		</div>
+	</div>
 	</body>
 </html>

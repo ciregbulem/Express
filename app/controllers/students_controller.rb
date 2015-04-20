@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :show, :update]
+  before_filter :authenticate_student!, :except => [:index, :show, :update]
+  layout 'student'
   
   def index
     @students = Student.all
@@ -22,6 +23,21 @@ class StudentsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @student.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # GET/PATCH /students/:id/finish_signup
+  def finish_signup
+    current_student.email = current_student.temp_email
+    # authorize! :update, @user 
+    if request.patch? && params[:student] #&& params[:user][:email]
+      if current_student.update(student_params)
+        @student.skip_reconfirmation! if @student.respond_to?(:skip_confirmation)
+        sign_in(current_student, :bypass => true)
+        redirect_to current_student, notice: 'Your profile was successfully updated.'
+      else
+        @show_errors = true
       end
     end
   end

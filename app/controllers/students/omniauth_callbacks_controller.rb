@@ -25,13 +25,12 @@ class Students::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
         @student = Student.find_for_oauth(env["omniauth.auth"], current_student)
 
-        if @student != nil
+        if @student.persisted?
           sign_in_and_redirect @student, event: :authentication
           set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
         else
@@ -42,11 +41,17 @@ class Students::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
     }
   end
 
-  [:twitter, :facebook, :linkedin].each do |provider|
+  [:linkedin].each do |provider|
     provides_callback_for provider
   end
 
   def after_sign_in_path_for(resource)
+    if resource.email_verified?
       super resource
+    else
+      finish_signup_path(resource)
+    end
   end
+
 end
+

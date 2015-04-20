@@ -1,2 +1,108 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<html>
+<head>
+  <title>Express</title>
+</head>
+  <!-- Navbar -->
+  <div style="background-image: url('http://i.imgur.com/uNkA70c.jpg');padding-top: 2%;padding-bottom: 25%;" width="100%">
+    <div class="container-fluid">
+        <div class="col-lg-3">
+          <img src="http://i.imgur.com/j4lRgwH.png" class="img img-responsive" width="80%" height="80%">
+        </div>
+        <div class="col-lg-3 col-lg-offset-6">
+            <% if student_signed_in? %>
+              <a href="<%= student_path(current_student) %>"><h6 class="text-capitalize" style="color: #FFFFFF;display: inline;"><i class="fa fa-eye"></i> View Profile</h6></a>
+            <% end %>
+
+            <% if student_signed_in? %>
+            <h6 style="display: inline;padding-left: 10px;">
+              <%= link_to edit_student_registration_path, style: "color: #FFFFFF; padding-right: 10px;" do %>
+                <i class="fa fa-edit"></i> Edit Profile
+              <% end %>
+              <%= link_to destroy_student_session_path, :method => :delete, style: "color: #FFFFFF;" do %>
+                <i class="fa fa-lock"></i> Log Out
+              <% end %>
+            </h6>
+            <% else %>
+            <h6 style="display: inline;">
+              <%= link_to 'Login', new_student_session_path, style: "color: #FFFFFF;", class: "pull-right" %>
+              <%= link_to 'Sign Up', new_student_registration_path, style: "color: #FFFFFF;padding-right: 20px;", class: "pull-right" %>
+            </h6>
+            <% end %>
+        </div><!-- Navbar END -->
+
+      <!-- Jumbotron Text -->
+      <div class="row" style="padding-top: 17%;">
+        <div class="col-lg-12">
+          <h2 class="text-center text-capitalize" style="color: #FFFFFF;">Trinity College<br>Resume Builder & Professional Network </h2>
+          <p class="lead text-center" style="color: #FFFFFF;">Preparing Trinity Students. Connecting Trinity grads</p>
+          <br>
+          <br>
+          <center><a class="btn btn-primary btn-lg smooth-scroll" href="#description">Learn More</a></center>     
+            <% if employer_signed_in? %>
+               <p>Welcome employer <%= current_employer.company %></p>
+               <%= link_to 'Logged In [click to logout]', destroy_employer_session_path, :method => :delete %>
+               <%= link_to 'Edit Profile', edit_employer_registration_path %>
+             <% elsif student_signed_in? %>
+
+             <% else %>
+        
+             <% end %>
+        </div>
+      </div><!-- Jumbotron END -->
+    </div> 
+  </div>
+  <div class="container-fluid">
+      <div class="row" style="padding-top: 10%;padding-bottom:10%;" id="description">
+      <div class="container-fluid">
+        <div class="col-lg-4">
+            <center><i class="fa fa-plus fa-5x"></i></center>
+            <h4 class="text-center">Create</h4>
+            <p class="text-center lead">
+              Enter in your work experience, skills, major, GPA, and much more to get started with your profile.
+            </p>
+        </div>
+        <div class="col-lg-4">
+          <center><i class="fa fa-edit fa-5x"></i></center>
+          <h4 class="text-center">Generate</h4>
+          <p class="text-center lead">
+            Generate as many resumes as you like using the information entered into your profile.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <center><i class="fa fa-download fa-5x"></i></center>
+          <h4 class="text-center">Download</h4>
+          <p class="text-center lead">
+            Download the resumes you create in PDF format. And you are done!
+          </p>
+        </div>
+        </div>
+      </div>
+      <div class="row" style="background-color: #3498db;padding: 45px;">
+        <h3 style="color: #FFFFFF;" class="text-center text-capitalize">Earn a great salary. Get your dream job today. <a class="text-warning" style="display: inline;color: #ffb400" href="/students/sign_up">Sign up</a></h3>
+      </div>
+      <div class="row" style="padding: 75px;">
+        <h1 class="text-center"><small>Over</small> 9213 <small>connections made on Express </h1>
+      </div>
+      <!-- Footer -->
+      <div class="row"> 
+      <div class="footer" width="100%">
+        <div class="col-lg-12" style="background-color: #000000;padding: 5%;">
+        <div class="text-center">
+          <%= link_to 'About', new_employer_session_path, style: "color: #FFFFFF; margin: 50px;" %>
+          <%= link_to 'Students', new_student_session_path, style: "color: #FFFFFF; margin: 50px;" %>
+          <%= link_to 'Alumni', new_employer_session_path, style: "color: #FFFFFF; margin: 50px;" %>
+        </div>
+          <% if employer_signed_in? == false && student_signed_in? == false %>
+            <%= link_to 'Alumni Login', new_employer_session_path, style: "color: #FFFFFF; margin: 50px;" %>
+          <% end %>
+          <% if employer_signed_in? && student_signed_in? == false %>
+             <p>Welcome employer <%= current_employer.company %></p>
+             <%= link_to 'Logged In [click to logout]', destroy_employer_session_path, :method => :delete %>
+             <%= link_to 'Edit Profile', edit_employer_registration_path %>
+         <% end %>
+        </div>
+      </div>
+    </div><!-- Footer END -->
+  </div>
+</html>
+

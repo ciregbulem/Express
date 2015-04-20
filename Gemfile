@@ -1,15 +1,19 @@
 source 'https://rubygems.org'
 
-# Figaro for creating environment variables
+# For environment variables
 gem 'figaro'
 
-# OAuth gem for Social Media authentications
-gem 'omniauth'
+# Boostrap Forms
+gem 'bootstrap_form'
 
-# OAuth gem for LinkedIn authentication
+# OmniAuth for social media user authentication
+gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-linkedin'
 
-# Devise for student and employer account creation and login
+# Gem for pagination on Active Records
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

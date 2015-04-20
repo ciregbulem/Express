@@ -1,32 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% if student_signed_in? %>
-    <p>Welcome Student <%= current_student.birthday %></p>
-    <%= link_to 'Logged In [click to logout]', destroy_student_session_path, :method => :delete %>
-    <%= link_to 'edit profile', edit_student_registration_path%>
-  <% else %>
-    <p>Student is not signed in.</p>
-    <%= link_to 'Login', new_student_session_path %>
-  <% end %>
-  
-  <% if employer_signed_in? %>
-     <p>Welcome employer <%= current_employer.company %></p>
-     <%= link_to 'Logged In [click to logout]', destroy_employer_session_path, :method => :delete %>
-     <%= link_to 'edit profile', edit_employer_registration_path%>
-   <% else %>
-     <p>employer is not signed in.</p>
-     <%= link_to 'Login', new_employer_session_path %>
-   <% end %>
-   
-  <title>Express</title>
+    <link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title>Express</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-
+<div class="container-fluid">
+	<% if flash.alert || flash.notice %>
+	    
+	    <div class="container">
+	        <div class="row">
+	            <div id="flash">
+	              <% if flash.alert %>
+	                  <h6 class="alert alert-danger alert-dismissible" role="alert">
+	                      <%= flash.alert %>
+	                  </h6>
+	              <% end %>
+	            </div>
+	            <div id="notice">
+	              <% if flash.notice %>
+	                      <h6 class="alert alert-success alert-dismissible" role="alert">
+	                          <%= flash.notice %>
+	                      </h6>
+	              <% end %>
+	            </div>
+	        </div>
+	    </div>
+	<% end %>
+</div>
 <%= yield %>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- Smooth Scroll -->
+<script type="text/javascript">
+  (function (jQuery) {
+    jQuery.mark = {
+      jump: function (options) {
+        var defaults = {
+          selector: 'a.smooth-scroll'
+        };
+        if (typeof options == 'string') defaults.selector = options;
+        var options = jQuery.extend(defaults, options);
+        return jQuery(options.selector).click(function (e) {
+          var jumpobj = jQuery(this);
+          var target = jumpobj.attr('href');
+          var thespeed = 1000;
+          var offset = jQuery(target).offset().top;
+          jQuery('html,body').animate({
+            scrollTop: offset
+          }, thespeed, 'swing')
+          e.preventDefault();
+        })
+      }
+    }
+  })(jQuery);
 
+
+  jQuery(function(){  
+    jQuery.mark.jump();
+  });
+  </script><!-- Smooth Scroll -->
 </body>
 </html>

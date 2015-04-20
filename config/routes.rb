@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :students, :controllers => { omniauth_callbacks: 'students/omniauth_callbacks' }
+  devise_for :students, controllers: { 
+    omniauth_callbacks: 'students/omniauth_callbacks' 
+  }
   devise_for :employers
   devise_for :alums
   resources :students 
   resources :employers
 
   get 'welcome/index'
+  match '/students/:id/finish_signup' => 'students#finish_signup', via: [:get, :patch], :as => :finish_signup
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
