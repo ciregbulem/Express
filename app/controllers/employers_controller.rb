@@ -1,12 +1,13 @@
 class EmployersController < ApplicationController
-  before_action :set_employer
+  before_action :set_employer, only: [:show, :edit, :update, :destroy]
+  layout 'employer'
   
   def index
-    @employers=Employer.all
+    @employers = Employer.all
   end
   
   def show
-    @employers=Employer.find(params[:id])
+    @employer = Employer.find(params[:id])
   end
   
   def update
@@ -23,7 +24,7 @@ class EmployersController < ApplicationController
   
   private
     def set_employer
-      @employer=Employer.find(params[:id])
+      @employer = Employer.find(params[:id])
     end
   
     def employer_params

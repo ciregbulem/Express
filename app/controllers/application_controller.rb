@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 	def layout_by_resource
 	  if devise_controller? && resource_name == :employer
-	    "application"
+	    "employer"
 	  elsif devise_controller? && resource_name == :student
 	    "student"
 	  else

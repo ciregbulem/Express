@@ -31798,3 +31798,1542 @@ Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0e
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:05:13 -0400
+
+
+Started GET "/" for ::1 at 2015-04-27 16:23:07 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 301ms (Views: 294.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_in" for ::1 at 2015-04-27 16:23:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered employers/shared/_links.html.erb (1.6ms)
+  Rendered employers/sessions/new.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 185ms (Views: 143.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/employers/sign_in" for ::1 at 2015-04-27 16:23:22 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"naDgdUAoa+meX+4qmS8cel92oPL6+9TtuBiklRoWEc8QPjcXS3JSLqAbnKTG7jTmIfapTiWCUK5C+ViMGNGEKg==", "employer"=>{"email"=>"usherx20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployer Load (0.4ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."email" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["email", "usherx20@gmail.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (42.4ms)[0m  [1mUPDATE "employers" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "employers"."id" = ?[0m  [["current_sign_in_at", "2015-04-27 20:23:22.607899"], ["sign_in_count", 2], ["updated_at", "2015-04-27 20:23:22.609583"], ["id", 13]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 44.4ms)
+
+
+Started GET "/" for ::1 at 2015-04-27 16:23:22 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mEmployer Load (0.3ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["id", 13]]
+  Rendered welcome/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 216ms (Views: 214.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:23:37 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (29.8ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 145ms (Views: 111.1ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/employers/2" for ::1 at 2015-04-27 16:23:42 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Employer with 'id'=2):
+  app/controllers/employers_controller.rb:26:in `set_employer'
+
+
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.2ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (24.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (62.6ms)
+
+
+Started GET "/employers/3" for ::1 at 2015-04-27 16:23:56 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployer Load (25.5ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 404 Not Found in 28ms (ActiveRecord: 25.5ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Employer with 'id'=3):
+  app/controllers/employers_controller.rb:26:in `set_employer'
+
+
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (21.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (50.3ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:24:09 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 131ms (Views: 128.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:24:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:24:10 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:10 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:24:10 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:24:47 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 78ms (Views: 73.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:24:47 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:25:05 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (16.9ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 79ms (Views: 59.6ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:25:06 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:25:16 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (27.6ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 114ms (Views: 78.7ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:16 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:25:37 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (19.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 190ms (Views: 168.5ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:25:37 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:26:24 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (24.3ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1251ms (Views: 1222.9ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:26:25 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:27:14 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (18.5ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 158ms (Views: 136.5ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:14 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:15 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:27:28 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 68ms (Views: 64.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:27:28 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:28:51 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (19.7ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 659ms (Views: 628.0ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:28:52 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:29:20 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (14.4ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 108ms (Views: 91.4ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:29:20 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:21 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:29:35 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:29:36 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:29:51 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (22.3ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 95ms (Views: 69.1ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:51 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:29:52 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:29:52 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:30:10 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (22.3ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 217ms (Views: 190.8ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:30:11 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:31:24 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (21.6ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (45.7ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 21.6ms)
+
+ActionView::Template::Error (undefined method `postion' for #<Employer:0x007fbb6a2f3960>):
+    10: 				<h2><%= @employer.first_name %> <%= @employer.last_name %> (<%= @employer.grad_year %>), <small><%= @employer.company %></small></h2>
+    11: 				
+    12: 				<h3>
+    13: 					<%= @employer.postion %><br>
+    14: 					<%= @employer.email %><br>
+    15: 				</h3>
+    16: 			</div>
+  app/views/employers/show.html.erb:13:in `_app_views_employers_show_html_erb__1908468621021968078_70221458539800'
+
+
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.1ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (24.9ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (68.8ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:31:32 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 103ms (Views: 100.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:31:32 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:32:00 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (14.7ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 200ms (Views: 183.3ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:32:01 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:32:14 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:32:15 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:35:03 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (21.6ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 21.6ms)
+
+ActionView::Template::Error (undefined method `linkedin_link' for #<Employer:0x007fbb689d2378>):
+     6: 			<div class="col-lg-2">
+     7: 				<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTUBnyxbh-UqMJzhrMgNsfAbHYgVpuaqCn1FHOoHeaSztutBjxpG-sX28k" class="img img-responsive img-thumbnail">
+     8: 				<br>
+     9: 				<% if @employer.linkedin_link %>
+    10: 					<a href="<%= @employer.linkedin_link %>"><i class="fa fa-linkedin fa-2x"></i></a>
+    11: 				<% end %>
+    12: 			</div>
+  app/views/employers/show.html.erb:9:in `_app_views_employers_show_html_erb__1908468621021968078_70221445366060'
+
+
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.3ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.3ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (25.8ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/usherx20/.rvm/gems/ruby-2.0.0-p481/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (76.8ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:35:26 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (22.1ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 379ms (Views: 353.6ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:35:27 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:36:11 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (21.8ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 199ms (Views: 173.0ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:11 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:36:27 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (20.6ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 229ms (Views: 204.8ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:36:27 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:27 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:36:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:36:28 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:39:17 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (15.7ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 310ms (Views: 255.5ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:18 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:18 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:39:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:39:18 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:39:19 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:39:42 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 154ms (Views: 121.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:39:43 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:39:45 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.3ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 76ms (Views: 70.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:40:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (18.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (16.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 5748ms (Views: 5534.8ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:41:00 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:41:01 -0400
+
+
+Started GET "/" for ::1 at 2015-04-27 16:41:27 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mEmployer Load (0.3ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["id", 13]]
+  Rendered welcome/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 464ms (Views: 461.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/employers/sign_out" for ::1 at 2015-04-27 16:41:42 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PtuXgK1GeQE4JBDqSPyIxaynKh0IWvylrSkoZucE/1uyDDtx4ZtLKh5M4YxkdqOpqF2zFfgwL51eW5G9+5jszw=="}
+  [1m[36mEmployer Load (2.3ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 353ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-04-27 16:41:42 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 111ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_in" for ::1 at 2015-04-27 16:41:46 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered employers/shared/_links.html.erb (3.4ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (269.8ms)
+Completed 200 OK in 433ms (Views: 429.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employers/sign_in" for ::1 at 2015-04-27 16:41:55 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q5iYbdMU8ZaeZe3AqXQH+vG4G57cVI7DhLA99sM/zL7Gxe9ZGDsjeLHkgycOvxbuZFr+lt5OjrQ/gzmElVS3hQ==", "employer"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mEmployer Load (41.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."email" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["email", "joe@example.com"]]
+Completed 401 Unauthorized in 77ms (ActiveRecord: 41.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q5iYbdMU8ZaeZe3AqXQH+vG4G57cVI7DhLA99sM/zL7Gxe9ZGDsjeLHkgycOvxbuZFr+lt5OjrQ/gzmElVS3hQ==", "employer"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered employers/shared/_links.html.erb (1.4ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (22.5ms)
+Completed 200 OK in 528ms (Views: 434.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employers/sign_in" for ::1 at 2015-04-27 16:41:59 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s4Rk8EUD2un0GyY+G4KFakJ+njKd8uKDJgua45fUGyM22RPEjiwIB9uaSNm8SZR+15x7Op/o4vSdOJ6Rwb9gGA==", "employer"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployer Load (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."email" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["email", "joe@example.com"]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s4Rk8EUD2un0GyY+G4KFakJ+njKd8uKDJgua45fUGyM22RPEjiwIB9uaSNm8SZR+15x7Op/o4vSdOJ6Rwb9gGA==", "employer"=>{"email"=>"joe@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered employers/shared/_links.html.erb (0.4ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (4.2ms)
+Completed 200 OK in 184ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_in" for ::1 at 2015-04-27 16:42:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered employers/shared/_links.html.erb (0.5ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (4.8ms)
+Completed 200 OK in 227ms (Views: 224.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_in" for ::1 at 2015-04-27 16:42:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered employers/shared/_links.html.erb (0.6ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (6.3ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_up" for ::1 at 2015-04-27 16:42:15 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered employers/shared/_links.html.erb (0.9ms)
+  Rendered employers/registrations/new.html.erb within layouts/employer (11.3ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employers/sign_in" for ::1 at 2015-04-27 16:42:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered employers/shared/_links.html.erb (0.6ms)
+  Rendered employers/sessions/new.html.erb within layouts/employer (5.6ms)
+Completed 200 OK in 88ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employers/sign_in" for ::1 at 2015-04-27 16:42:33 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3dDoxWvNWpFctXb6s0R1dU0Qt/vNbwT7U+N5ftBs9f5YjZ/xoOKIf3M0GB0Uj2Rh2PJS8891BIzo0H0MhgeOxQ==", "employer"=>{"email"=>"usherx20@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."email" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["email", "usherx20@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (25.5ms)[0m  UPDATE "employers" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "employers"."id" = ?  [["last_sign_in_at", "2015-04-27 20:23:22.607899"], ["current_sign_in_at", "2015-04-27 20:42:33.974567"], ["sign_in_count", 3], ["updated_at", "2015-04-27 20:42:33.976220"], ["id", 13]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 27.7ms)
+
+
+Started GET "/" for ::1 at 2015-04-27 16:42:34 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["id", 13]]
+  Rendered welcome/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 313ms (Views: 188.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:42:46 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployer Load (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 431ms (Views: 428.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:43:20 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployer Load (15.5ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (0.8ms)
+  [1m[36mEmployer Load (0.3ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 400ms (Views: 230.4ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:43:21 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:45:20 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (0.3ms)
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["id", 13]]
+Completed 200 OK in 292ms (Views: 288.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:45:21 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:46:25 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployer Load (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (0.3ms)
+  [1m[36mEmployer Load (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 174ms (Views: 170.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:25 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:46:37 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (1.2ms)
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["id", 13]]
+Completed 200 OK in 119ms (Views: 116.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:46:37 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:47:08 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployer Load (0.3ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (1.0ms)
+  [1m[36mEmployer Load (0.2ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1[0m  [["id", 13]]
+Completed 200 OK in 165ms (Views: 161.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:08 -0400
+
+
+Started GET "/employers/1" for ::1 at 2015-04-27 16:47:56 -0400
+Processing by EmployersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.1ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "employers".* FROM "employers" WHERE "employers"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered employers/show.html.erb within layouts/employer (1.8ms)
+  [1m[35mEmployer Load (0.2ms)[0m  SELECT  "employers".* FROM "employers" WHERE "employers"."id" = ?  ORDER BY "employers"."id" ASC LIMIT 1  [["id", 13]]
+Completed 200 OK in 201ms (Views: 198.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/employers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/employers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/application.self-47376923374c906c5d43b120095078707c1bae4b7e9b0ba3abc13967af335d6e.css?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/rails_bootstrap_forms.self-10cb7d2aef696c4062f219f6678eed1d57c254a6717cea25d021726a4b9a214c.css?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-27 16:47:57 -0400
