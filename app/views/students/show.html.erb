@@ -10,7 +10,7 @@
 		<div class="well well-lg" style="background-color: #FFFFFF">
 			<h1>
 				<%= @student.first_name %> <%= @student.last_name %> 
-				<% if student_signed_in? %> 
+				<% if student_signed_in? && current_student == @student %> 
 					<small><%= link_to "Edit", edit_student_registration_path %> </small>
 				<% end %>
 			</h1>
@@ -18,8 +18,6 @@
 			<p>
 				<% if @student.linkedin_link %>
 					<a href="<%= @student.linkedin_link %>"><i class="fa fa-linkedin fa-2x"></i></a>
-
-				<% elsif @student.linkedin_link %>
 
 				<% else %>
 					<%= link_to "Connect to LinkedIn", omniauth_authorize_path(current_student, :linkedin) %>
